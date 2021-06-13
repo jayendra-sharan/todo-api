@@ -1,0 +1,9 @@
+{
+  "name": "todo-api",
+  "version": "1.0.0",
+  "description": "An API service for managing Todo List.",
+  "main": "index.js",
+  "repository": "https://github.com/jayendra-sharan/todo-api.git",
+  "author": "Jayendra Sharan <jayendra.sharan@gmail.com>",
+  "license": "MIT"
+}
