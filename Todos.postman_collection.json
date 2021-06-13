@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "a64af255-178f-46a9-aebc-3006fbe8e800",
+		"name": "Todos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/todos/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/todos/get/12345",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						"get",
+						"12345"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/todos/get?key=status&value=done",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						"get"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "status"
+						},
+						{
+							"key": "value",
+							"value": "done"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/todos/delete/12345",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						"delete",
+						"12345"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add A Todo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Test in Browser\",\n    \"description\": \"Test get calls\",\n    \"priority\": \"Highest\",\n    \"category\": \"Learning\",\n    \"tags\": \"netlify, deployment\",\n    \"dueDate\": 1623605322366,\n    \"status\": \"Todo\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/todos/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
