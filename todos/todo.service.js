@@ -44,5 +44,18 @@ TodoService.prototype.filter = function(key, value) {
   )
 }
 
+TodoService.prototype.edit = function(id, data) {
+  const todo = this.getById(id);
+  const updatedTodo = {
+    ...todo,
+    ...data
+  };
+  this.todos = this.todos.map((todo) => {
+    if (todo.id === id) return updatedTodo;
+    return todo;
+  });
+  return updatedTodo;
+}
+
 const todoService = new TodoService();
 module.exports = todoService;

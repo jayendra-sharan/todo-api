@@ -76,4 +76,21 @@ router.post('/add', (req, res) => {
   }
 });
 
+router.put('/edit/:id', (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = req.body;
+    const todo = todoService.edit(id, data);
+    res.send({
+      success: true,
+      data: todo
+    });
+  } catch (e) {
+    res.status(500).send({
+      success: false,
+      error: e.message || 'Something went wrong'
+    })
+  }
+});
+
 module.exports = router;
