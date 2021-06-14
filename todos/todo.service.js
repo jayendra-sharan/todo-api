@@ -15,6 +15,11 @@ TodoService.prototype.getById = function (id) {
 }
 
 TodoService.prototype.add = function (data) {
+  const { title } = data;
+  if (!title) {
+    throw new Error(`Field: title is mandatory.`);
+    return;
+  }
   const todo = new Todo(data);
   this.todos = [
     ...this.todos,
